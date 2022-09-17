@@ -5,10 +5,10 @@ import Note from "./Note";
 import CreateArea from "./CreateArea";
 import { dkeeper } from "../../../declarations/dkeeper";
 
-function App() {
+const App = () => {
   const [notes, setNotes] = useState([]);
 
-  function addNote(newNote) {
+  const addNote = (newNote) => {
     setNotes(prevNotes => {
       dkeeper.createNote(newNote.title, newNote.content)
       return [newNote, ...prevNotes];
@@ -26,7 +26,7 @@ function App() {
   }
 
 
-  function deleteNote(id) {
+  const deleteNote = (id) => {
     dkeeper.removeNote(id);
     setNotes(prevNotes => {
       return prevNotes.filter((noteItem, index) => {

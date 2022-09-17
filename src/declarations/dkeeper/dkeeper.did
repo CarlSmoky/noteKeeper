@@ -6,4 +6,5 @@ type Note =
 service : {
   createNote: (text, text) -> () oneway;
   readNote: () -> (vec Note) query;
+  removeNote: (nat) -> () oneway;
 }
